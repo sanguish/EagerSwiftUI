@@ -19,7 +19,7 @@ struct SymbolView: View {
 
     var body: some View {
         VStack(spacing: 30) {
-            Image(systemName: "square.and.arrow.up")
+            sfsymbol.image
                 .resizable()
                 .foregroundColor(Color.blue)
                 .aspectRatio(contentMode: .fill)

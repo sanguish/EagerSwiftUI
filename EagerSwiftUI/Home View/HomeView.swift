@@ -15,12 +15,10 @@ struct HomeView: View {
             List {
                 ForEach(viewModel.symbolsArray) { sfsymbol in
                     NavigationLink {
-                        NavigationLink(sfsymbol.symbolName, destination: SymbolView(sfsymbol: sfsymbol))
-
+                        SymbolView(sfsymbol: sfsymbol)
                     } label: {
                         Label(sfsymbol.symbolName, systemImage: sfsymbol.symbolName)
                     }
-
                 }
             }
             .navigationTitle("Symbols")
