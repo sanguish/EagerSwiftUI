@@ -21,42 +21,14 @@ class HomeViewModel: Identifiable {
     }
 
     private let sfSymbols = [
-        "house",
-        "bell",
-        "bookmark",
-        "calendar",
-        "camera",
-        "cart",
-        "clock",
-        "cloud",
-        "folder",
-        "gear",
-        "globe",
-        "heart",
-        "lightbulb",
-        "link",
-        "lock",
-        "mail",
-        "map",
-        "megaphone",
-        "music.note",
-        "paperclip",
-        "person",
-        "phone",
-        "photo",
-        "pin",
-        "printer",
-        "scissors",
-        "star",
-        "trash",
-        "umbrella",
-        "video"
+        "house", "bell", "bookmark",
+        "calendar", "camera", "cart",
+        "clock", "cloud", "folder", "gear",
+        "globe", "heart", "lightbulb", "link",
+        "lock", "mail", "map", "megaphone",
+        "music.note", "paperclip", "person",
+        "phone", "photo", "pin", "printer", "scissors",
+        "star", "trash", "umbrella", "video",
     ]
-
-
-
-
-
-
 }
 

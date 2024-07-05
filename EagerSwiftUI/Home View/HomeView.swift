@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
-    var viewModel: HomeViewModel = HomeViewModel()
-    
+    var viewModel: HomeViewModel
+    init() {
+        self.viewModel = HomeViewModel
+    }
+
     var body: some View {
         NavigationStack {
             List {
@@ -23,7 +26,6 @@ struct HomeView: View {
             }
             .navigationTitle("Symbols")
             .listStyle(.plain)
-            
             .toolbarTitleDisplayMode(.inlineLarge)
             
         }
