@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     var viewModel: HomeViewModel
+    
     init() {
         self.viewModel = HomeViewModel()
     }
