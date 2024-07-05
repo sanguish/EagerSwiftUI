@@ -8,13 +8,12 @@
 import Foundation
 import SwiftUI
 
-struct SymbolView: View, Identifiable, Hashable {
+struct SymbolView: View {
     var id = UUID()
     var sfsymbol: SFSymbol
 
-    init(sfsymbol: SFSymbol) {
+    init(id: UUID = UUID(), sfsymbol: SFSymbol) {
         self.sfsymbol = sfsymbol
-        print("\(sfsymbol.symbolName)")
     }
 
     var body: some View {
@@ -27,14 +26,10 @@ struct SymbolView: View, Identifiable, Hashable {
             Text(sfsymbol.symbolName)
                 .font(.largeTitle)
         }
+        .onAppear {
+            print(".onAppear \(sfsymbol.symbolName)")
+        }
 
-    }
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-
-    static func == (lhs: SymbolView, rhs: SymbolView) -> Bool {
-        lhs.id == rhs.id
     }
 }
 

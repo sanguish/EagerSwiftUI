@@ -13,25 +13,24 @@ struct HomeView: View {
     init() {
         self.viewModel = HomeViewModel()
     }
-
+    
     var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModel.symbolsArray) { sfsymbol in
-                    NavigationLink(value: sfsymbol) {
-                        Label(sfsymbol.symbolName, 
-                              systemImage: sfsymbol.symbolName)
+                    NavigationLink {
+                        SymbolView(sfsymbol: sfsymbol)
+                    } label: {
+                        Label(sfsymbol.symbolName, systemImage: sfsymbol.symbolName)
                     }
+
                 }
-            }
-            .navigationDestination(for: SFSymbol.self) { sfsymbol in
-                SymbolView(sfsymbol: sfsymbol)
             }
             .navigationTitle("Symbols")
             .listStyle(.plain)
-
+            
             .toolbarTitleDisplayMode(.inlineLarge)
-
+            
         }
     }
 }
