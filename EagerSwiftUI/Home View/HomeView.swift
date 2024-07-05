@@ -8,26 +8,30 @@
 import SwiftUI
 
 struct HomeView: View {
-    var viewModel: HomeViewModel = HomeViewModel()
-    
+    let viewModel: HomeViewModel
+
+    init() {
+        self.viewModel = HomeViewModel()
+    }
+
     var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModel.symbolsArray) { sfsymbol in
-                    NavigationLink {
-                        NavigationLink(sfsymbol.symbolName, destination: SymbolView(sfsymbol: sfsymbol))
-
-                    } label: {
-                        Label(sfsymbol.symbolName, systemImage: sfsymbol.symbolName)
+                    NavigationLink(value: sfsymbol) {
+                        Label(sfsymbol.symbolName, 
+                              systemImage: sfsymbol.symbolName)
                     }
-
                 }
+            }
+            .navigationDestination(for: SFSymbol.self) { sfsymbol in
+                SymbolView(sfsymbol: sfsymbol)
             }
             .navigationTitle("Symbols")
             .listStyle(.plain)
-            
+
             .toolbarTitleDisplayMode(.inlineLarge)
-            
+
         }
     }
 }
