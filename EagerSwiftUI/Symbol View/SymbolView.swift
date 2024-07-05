@@ -8,18 +8,18 @@
 import Foundation
 import SwiftUI
 
-struct SymbolView: View, Identifiable, Hashable {
+struct SymbolView: View {
     var id = UUID()
     var sfsymbol: SFSymbol
 
-    init(id: UUID = UUID(), sfsymbol: SFSymbol) {
+    init(sfsymbol: SFSymbol) {
         self.sfsymbol = sfsymbol
-        print("\(sfsymbol.symbolName)")
+        print("init \(sfsymbol.symbolName)")
     }
 
     var body: some View {
         VStack(spacing: 30) {
-            sfsymbol.image
+            Image(systemName: "square.and.arrow.up")
                 .resizable()
                 .foregroundColor(Color.blue)
                 .aspectRatio(contentMode: .fill)
@@ -28,13 +28,6 @@ struct SymbolView: View, Identifiable, Hashable {
                 .font(.largeTitle)
         }
 
-    }
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-    }
-
-    static func == (lhs: SymbolView, rhs: SymbolView) -> Bool {
-        lhs.id == rhs.id
     }
 }
 
