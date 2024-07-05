@@ -12,7 +12,7 @@ struct SymbolView: View {
     var id = UUID()
     var sfsymbol: SFSymbol
 
-    init(id: UUID = UUID(), sfsymbol: SFSymbol) {
+    init(sfsymbol: SFSymbol) {
         self.sfsymbol = sfsymbol
     }
 
